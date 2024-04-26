@@ -1,0 +1,159 @@
+:root {
+  --color-bg-primario: #9f3647;
+  --color-bg-primarioTransp: #9f3648bd;
+  --color-bg-secundario: #181419;
+  --color-txt-primario: #fff;
+  --color-txt-secundario: #5f5f5f;
+  --color-bg-gray: #f7f7f7;
+  --color-shadow: #0000004d;
+  --color-scrollbar-track: #171717;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+/* Efecto de animación del logo y título */
+@keyframes tilt-n-move-shaking {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, 5px) rotate(5deg); }
+    50% { transform: translate(0, 0) rotate(0eg); }
+    75% { transform: translate(-5px, 5px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.bodyRegistrarse {
+  height: 100vh;
+  background: linear-gradient(to right top, #24242473, #24242473),
+    url("../assets/img/bg-register.jpg");
+  background-size: cover;
+  background-position: center;
+  .headerRegistrarse {
+    color: var(--color-txt-primario);
+    height: 8vh;
+    padding: 30px;
+    .anclaLogo {
+      color: var(--color-txt-primario);
+      font-weight: 700;
+      font-size: 1.2rem;
+      &:hover {
+        animation: tilt-n-move-shaking 0.25s infinite;
+      }
+    }
+  }
+  .main {
+    .seccionRegistrarse {
+      background-color: var(--color-bg-secundario);
+      width: 30%;
+      margin: 0 auto;
+      border-radius: 5px;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+      font-size: 1.2rem;
+      .tituloRegistrarse {
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      /*seleccionar todos los input menos el checkbox*/
+      form {
+        width: 100%;
+        padding: 40px;
+        input:not(.check, .boton),
+        select {
+          width: 100%;
+          margin-bottom: 20px;
+          height: 40px;
+          padding: 0px 20px;
+          font-size: 1.2rem;
+          border-radius: 20px;
+          border: 2px solid var(--color-bg-primario);
+          background-color: var(--color-bg-secundario);
+          outline: none;
+          color: var(--color-txt-primario);
+        }
+        .terminos {
+          font-size: 0.8rem;
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+          .textoCheck {
+            margin-left: 10px;
+          }
+        }
+        .boton {
+          width: 87%;
+          box-sizing: content-box;
+          background-color: var(--color-bg-primario);
+          border: 2px solid var(--color-bg-primario);
+          color: var(--color-txt-primario);
+          padding: 1rem 1rem;
+          border-radius: 5px;
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+        .ayuda {
+          margin-top: 40px;
+          font-size: 1rem;
+          color: var(--color-txt-secundario);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .bodyRegistrarse {
+    .headerRegistrarse {
+      padding: 20px;
+      .anclaLogo {
+        font-size: 1rem;
+      }
+    }
+    .main {
+      .seccionRegistrarse {
+        width: 95%;
+        padding: 10px 10px;
+        .tituloRegistrarse {
+          font-size: 2rem;
+        }
+        form {
+          width: 100%;
+          text-align: center;
+          input:not(.check, .boton),
+          select {
+            width: 80%;
+            height: 35px;
+            font-size: 1rem;
+          }
+          .terminos {
+            width: 80%;
+            margin: 0 auto;
+            font-size: 0.7rem;
+          }
+          .boton {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 70%;
+            padding: 0.8rem 0.8rem;
+            font-size: 0.8rem;
+          }
+          .ayuda {
+            text-align: left;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
